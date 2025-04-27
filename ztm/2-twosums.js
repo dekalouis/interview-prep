@@ -25,7 +25,7 @@ function twoSumPointers(arr, sum) {
   let res = [];
 
   while (low < high) {
-    console.log(`arr low is ${arr[low]} and arr high is ${arr[high]}`);
+    // console.log(`arr low is ${arr[low]} and arr high is ${arr[high]}`);
     if (arr[low] + arr[high] === sum) {
       res.push(arr[low], arr[high]);
       return res;
@@ -36,15 +36,20 @@ function twoSumPointers(arr, sum) {
   return -1;
 }
 
-console.log(twoSumPointers(input, 8));
-console.log(twoSumPointers(input2, 8));
+// console.log(twoSumPointers(input, 8));
+// console.log(twoSumPointers(input2, 8));
 
-function twoSumUnsort(arr, sum) {
+function hasPairWithSum(arr, sum) {
   let compliment = new Set();
 
   for (let i = 0; i < arr.length; i++) {
-    if (!compliment.has(arr[i])) {
-      compliment.set(sum - arr[i]);
+    // If we've seen the complement before, return both numbers
+    if (compliment.has(arr[i])) {
+      return [arr[i], sum - [arr[i]]]; //true
     }
+    compliment.add(sum - arr[i]);
   }
+  return -1; //false
 }
+
+console.log(hasPairWithSum([6, 4, 3, 2, 1, 7], 9));
