@@ -8,14 +8,28 @@ function mergeSort(array) {
   const mid = Math.floor(array.length / 2);
   let left = array.slice(0, mid); // from index 0 up to mid (not including mid)
   let right = array.slice(mid); // from mid to end(inc mid)
-  //   console.log(left, right);
-  //   console.log(`result of merged ${merge(mergeSort(left), mergeSort(right))}`);
+  console.log(`left->`, left, `right->`, right);
+
   return merge(mergeSort(left), mergeSort(right));
 }
-
 function merge(left, right) {
   let merged = [];
-  for (let i = 0; i < left.length; i++) {}
+  let leftIndex = 0;
+  let rightIndex = 0;
+  //loop as long as the index is less than the length of left/right
+  while (leftIndex < left.length && rightIndex < right.length) {
+    //check if the index value of the left is less than the right, push to new arr
+    if (left[leftIndex] < right[rightIndex]) {
+      merged.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      merged.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+  console.log(left, `---`, right);
+  //combine everything together
+  return merged.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
 
 const answer = mergeSort(numbers);
