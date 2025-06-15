@@ -1,3 +1,4 @@
+
 // What is the Big O of the below function? (Hint, you may want to go line by line)
 function funChallenge(input) {
   let a = 10; // O(1)
@@ -12,3 +13,4 @@ function funChallenge(input) {
   return a; // O(1)
 }
 //Big O = 6 + n
+
