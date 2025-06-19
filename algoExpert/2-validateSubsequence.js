@@ -26,3 +26,26 @@ function isValidSubsequence(array, sequence) {
 console.log(isValidSubsequence(array, sequence)); // true
 
 //TWO POINTERS METHOD
+function isValidSubsequence2(arr, sequence) {
+  // Write your code here.
+  //TWO POINTERS while loop,
+  //iterate through the main index, check the sequence index while youre at it
+  let arrIdx = 0;
+  let sqxIdx = 0;
+
+  while (arrIdx < arr.length) {
+    console.log(`comparing ${arr[arrIdx]} to ${sequence[sqxIdx]}`);
+    if (sequence.length === sqxIdx) break;
+    if (arr[arrIdx] === sequence[sqxIdx]) {
+      console.log(`match! Adding sqxIdx`);
+      sqxIdx++;
+      console.log(
+        `current sqxIdx: ${sqxIdx} and the length shuld be ${sequence.length}`
+      );
+    }
+
+    arrIdx++;
+  }
+
+  return sqxIdx === sequence.length;
+}
