@@ -16,7 +16,13 @@ function threeNumberSumBrute(arr, targetSum) {
   return res;
 }
 
-(array = [12, 3, 1, 2, -6, 5, -8, 6]), (targetSum = 0);
+array = [12, 3, 1, 2, -6, 5, -8, 6];
+targetSum = 0;
+// [
+//   [-8, 2, 6],
+//   [-8, 3, 5],
+//   [-6, 1, 5]
+// ]
 
 console.log(threeNumberSumBrute(array, targetSum));
 
@@ -49,3 +55,10 @@ function threeNumberSumPointers(arr, targetSum) {
   }
   return res;
 }
+
+array = [8, 10, -2, 49, 14];
+targetSum = 57;
+
+// [
+//   [-2, 10, 49]
+// ]
