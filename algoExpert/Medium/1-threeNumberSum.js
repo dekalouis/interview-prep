@@ -1,4 +1,4 @@
-function threeNumberSum(arr, targetSum) {
+function threeNumberSumBrute(arr, targetSum) {
   // Write your code here.
   //Brute Force Approach (Triple Nested Loop)
   // dont forget about the length!, they shouldnt overlap
@@ -16,5 +16,6 @@ function threeNumberSum(arr, targetSum) {
   return res;
 }
 
-// Do not edit the line below.
-exports.threeNumberSum = threeNumberSum;
+(array = [12, 3, 1, 2, -6, 5, -8, 6]), (targetSum = 0);
+
+console.log(threeNumberSumBrute(array, targetSum));
