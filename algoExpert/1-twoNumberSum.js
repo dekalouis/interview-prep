@@ -1,6 +1,7 @@
 array2 = [4, 6, 1, -3];
 targetSum2 = 3;
 
+//time complexity is O(n) space is O(n)
 function hashTableTwoNumberSum(array, targetSum) {
   // Write your code here.
   //HASHTABLE
@@ -26,6 +27,7 @@ targetSum3 = 163;
 
 function twoPointerTwoNumberSum(array, targetSum) {
   //TWO POINTERS APPROACH
+  //timespace is also O(n log n)
   array.sort((a, b) => a - b);
 
   let left = 0;
