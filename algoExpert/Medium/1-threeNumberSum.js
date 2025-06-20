@@ -19,3 +19,33 @@ function threeNumberSumBrute(arr, targetSum) {
 (array = [12, 3, 1, 2, -6, 5, -8, 6]), (targetSum = 0);
 
 console.log(threeNumberSumBrute(array, targetSum));
+
+function threeNumberSumPointers(arr, targetSum) {
+  // Write your code here.
+  //Two-Pointer after Sorting (Sorted Array + Two Pointer Sweep)
+  //sort, do for loop, add pointers after current index,
+  //add while loop as long as pointers dont overlap, make them get closer if
+  //the targetsum is achieved
+  arr.sort((a, b) => a - b);
+  let res = [];
+
+  for (let i = 0; i < arr.length - 2; i++) {
+    let left = i + 1;
+    let right = arr.length - 1;
+
+    while (left < right) {
+      let potentialSum = arr[i] + arr[left] + arr[right];
+
+      if (potentialSum === targetSum) {
+        res.push([arr[i], arr[left], arr[right]]);
+        left++;
+        right--;
+      } else if (potentialSum < targetSum) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  }
+  return res;
+}
